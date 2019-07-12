@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitConfig {
     public static  ApiService getApiService(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("192.168.43.134/")
+                .baseUrl("http://localhost/uas_api/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

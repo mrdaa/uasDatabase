@@ -1,9 +1,7 @@
 package com.dwiaji.uasdatabase.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("com.robohorse.robopojogenerator")
 public class DataItem{
 
 	@SerializedName("nik")

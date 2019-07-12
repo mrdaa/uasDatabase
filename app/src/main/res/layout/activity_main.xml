@@ -67,21 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:paddingTop="10dp"
-        android:text="Pengalaman" />
-
-    <EditText
-        android:id="@+id/txt_pengalaman"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textCapWords"
-        android:singleLine="true"
-        android:text="" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:paddingTop="10dp"
         android:text="Jurusan" />
 
     <Spinner
