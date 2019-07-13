@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     @GET("biodata")
-    Call<ResponseBio> ambildata();
+    Call<ResponseBio> ambilData();
 
     @FormUrlEncoded
     @POST("biodata")
