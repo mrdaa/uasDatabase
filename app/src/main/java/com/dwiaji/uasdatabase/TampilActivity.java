@@ -18,27 +18,27 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class tampil extends AppCompatActivity {
+public class TampilActivity extends AppCompatActivity {
 
     List<DataItem> data = new ArrayList<>();
-    RecyclerView rc_View;
+    RecyclerView recycler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampil);
 
-        rc_View =findViewById(R.id.rcView);
+        recycler = findViewById(R.id.recyclerView);
 
         getDataBio();
 
-        rc_View.setAdapter(new tampilAdapter(tampil.this,data));
-        rc_View.setLayoutManager(new LinearLayoutManager(tampil.this));
+        recycler.setAdapter(new uasAdapter(TampilActivity.this,data));
+        recycler.setLayoutManager(new LinearLayoutManager(TampilActivity.this));
     }
 
     private void getDataBio() {
-        final ProgressDialog progress = new ProgressDialog(tampil.this);
-        progress.setMessage("waiting ...");
+        final ProgressDialog progress = new ProgressDialog(TampilActivity.this);
+        progress.setMessage("waiting .. ");
         progress.show();
 
         Call<ResponseBio> request = RetrofitConfig.getApiService().ambilData();
@@ -47,10 +47,10 @@ public class tampil extends AppCompatActivity {
             public void onResponse(Call<ResponseBio> call, Response<ResponseBio> response) {
                 progress.dismiss();
                 if (response.isSuccessful()){
-                    data =response.body().getData();
-                    rc_View.setAdapter(new tampilAdapter(tampil.this,data));
-                }else{
-                    Toast.makeText(tampil.this, "Request not success", Toast.LENGTH_SHORT).show();
+                    data = response.body().getData();
+                    recycler.setAdapter(new uasAdapter(TampilActivity.this,data));
+                }else {
+                    Toast.makeText(TampilActivity.this, "Request not success", Toast.LENGTH_SHORT).show();
                 }
             }
 

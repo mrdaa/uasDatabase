@@ -1,6 +1,7 @@
 package com.dwiaji.uasdatabase;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,10 +22,10 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
 
-    EditText mNik, mNama, mAlamat;
-    Spinner sJk;
+    private EditText mNik, mNama, mAlamat;
+    private Spinner sJk;
+    private Button btnSimpan, btnTampil;
     String[] jenisKelamin = {"Laki-laki", "Perempuan"};
-    Button btnSimpan, btnTampil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_spinner_item, jenisKelamin);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sJk.setAdapter(adapter);
+
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,9 +50,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnTampil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TampilActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void simpanData() {
+    public void simpanData() {
         String nik = mNik.getText().toString().trim();
         String nama = mNama.getText().toString().trim();
         String alamat = mAlamat.getText().toString().trim();

@@ -13,13 +13,12 @@ import com.dwiaji.uasdatabase.model.DataItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class tampilAdapter extends RecyclerView.Adapter<tampilAdapter.MyHolder> {
-
+public class uasAdapter extends RecyclerView.Adapter <uasAdapter.MyHolder> {
     private Context context;
-    private List<DataItem> data = new ArrayList<>();
+    private List<DataItem> data  = new ArrayList<>();
 
-    public tampilAdapter(android.content.Context context, List<DataItem> data) {
-        this.context = context;
+    public uasAdapter(Context context, List<DataItem>data){
+        this.context=context;
         this.data = data;
     }
 
@@ -31,30 +30,28 @@ public class tampilAdapter extends RecyclerView.Adapter<tampilAdapter.MyHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
+    public void  onBindViewHolder(@NonNull MyHolder myHolder, int i){
         myHolder.tvNik.setText(data.get(i).getNik());
         myHolder.tvNama.setText(data.get(i).getNama());
         myHolder.tvAlamat.setText(data.get(i).getAlamat());
-        myHolder.tvGender.setText(data.get(i).getJenisKelamin());
+        myHolder.tvJenisKelamin.setText(data.get(i).getJenisKelamin());
     }
 
     @Override
-    public int getItemCount() {
-        return data.size();
-    }
+    public int getItemCount() {return data.size();}
 
     public class MyHolder extends RecyclerView.ViewHolder {
         TextView tvNik;
         TextView tvNama;
         TextView tvAlamat;
-        TextView tvGender;
+        TextView tvJenisKelamin;
 
-        public MyHolder(@NonNull View itemView) {
+        public MyHolder(@NonNull View itemView){
             super(itemView);
             tvNik = itemView.findViewById(R.id.tv_nik);
-            tvNama = itemView.findViewById(R.id.tv_nama);
+            tvNama = itemView.findViewById(R.id.tv_alamat);
             tvAlamat = itemView.findViewById(R.id.tv_alamat);
-            tvGender = itemView.findViewById(R.id.tv_gender);
+            tvJenisKelamin = itemView.findViewById(R.id.tv_gender);
         }
     }
 }
