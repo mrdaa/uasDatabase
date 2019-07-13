@@ -17,6 +17,6 @@ public interface ApiService {
     @POST("biodata")
     Call<DataItem> tambahData(
             @Field("nik") String nik,  @Field("nama") String nama,
-            @Field("jenis_kelamin") String jenis_kelamin, @Field("alamat") String alamat
+            @Field("alamat") String alamat,@Field("jenis_kelamin") String jenis_kelamin
     );
 }

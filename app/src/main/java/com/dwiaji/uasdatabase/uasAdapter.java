@@ -49,7 +49,7 @@ public class uasAdapter extends RecyclerView.Adapter <uasAdapter.MyHolder> {
         public MyHolder(@NonNull View itemView){
             super(itemView);
             tvNik = itemView.findViewById(R.id.tv_nik);
-            tvNama = itemView.findViewById(R.id.tv_alamat);
+            tvNama = itemView.findViewById(R.id.tv_nama);
             tvAlamat = itemView.findViewById(R.id.tv_alamat);
             tvJenisKelamin = itemView.findViewById(R.id.tv_gender);
         }

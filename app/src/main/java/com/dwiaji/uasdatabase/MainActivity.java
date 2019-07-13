@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
         }else if (nama.isEmpty()){
             mNama.setError("Nama Masih kosong !");
         }else if (kelamin.isEmpty()){
-            Toast.makeText(this, "Jenis Kelamin Belum diisi !", Toast.LENGTH_SHORT).show();
-        } else if (alamat.isEmpty()){
             mAlamat.setError("Alamat Belum diisi!");
+        } else if (alamat.isEmpty()){
+            Toast.makeText(this, "Jenis Kelamin Belum diisi !", Toast.LENGTH_SHORT).show();
         }else {
             final ProgressDialog progress = new ProgressDialog(MainActivity.this);
             progress.setMessage("Waiting to save ..");
